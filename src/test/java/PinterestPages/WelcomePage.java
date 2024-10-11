@@ -25,16 +25,8 @@ public class WelcomePage extends BasePage {
         BrowserClass.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(registerForm));
     }
 
-    public void cLickLoginField(){
-        driver.findElement(emailField).click();
-    }
-
     public void enterEmail() {
         driver.findElement(emailField).sendKeys(LOGIN);
-    }
-
-    public void clickPasswordField() {
-        driver.findElement(passwordField).click();
     }
 
     public void enterPassword() {
