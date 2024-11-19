@@ -4,9 +4,6 @@ import Utils.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static Utils.Constants.LOGIN;
-import static Utils.Constants.PASSWORD;
-
 public class WelcomePage extends BasePage {
 
     private final By loginButton = By.xpath("//div[@data-test-id='simple-login-button']");
@@ -15,7 +12,9 @@ public class WelcomePage extends BasePage {
     private final By passwordField = By.xpath("//input[@id='password'] ");
     private final By submitRegisterButton = By.xpath("//div[@data-test-id='registerFormSubmitButton'] ");
 
-
+    public void waitUntilLoginButtonWillBeClickable() {
+        Browser.getWebdriverWait().until(ExpectedConditions.elementToBeClickable(loginButton));
+    }
     public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
@@ -24,12 +23,12 @@ public class WelcomePage extends BasePage {
         Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(registerForm));
     }
 
-    public void enterEmail() {
-        driver.findElement(emailField).sendKeys(LOGIN);
+    public void enterEmail(String login) {
+        driver.findElement(emailField).sendKeys(login);
     }
 
-    public void enterPassword() {
-        driver.findElement(passwordField).sendKeys(PASSWORD);
+    public void enterPassword(String password) {
+        driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickSubmitRegisterButton() {

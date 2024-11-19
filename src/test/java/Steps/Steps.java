@@ -31,11 +31,12 @@ public class Steps {
 
     // Steps for login test
 
-    public static void enterLoginAndPassword() {
+    public static void enterLoginAndPassword(String login, String password) {
+        welcomePage.waitUntilLoginButtonWillBeClickable();
         welcomePage.clickLoginButton();
         welcomePage.waitRegisterForm();
-        welcomePage.enterEmail();
-        welcomePage.enterPassword();
+        welcomePage.enterEmail(login);
+        welcomePage.enterPassword(password);
         welcomePage.clickSubmitRegisterButton();
     }
 
