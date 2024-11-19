@@ -1,8 +1,7 @@
 package PinterestPages;
 
-import Utils.BrowserClass;
+import Utils.Browser;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static Utils.Constants.LOGIN;
@@ -22,7 +21,7 @@ public class WelcomePage extends BasePage {
     }
 
     public void waitRegisterForm() {
-        BrowserClass.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(registerForm));
+        Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(registerForm));
     }
 
     public void enterEmail() {
