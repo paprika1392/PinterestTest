@@ -3,7 +3,7 @@ package Steps;
 import PinterestPages.AccountPage;
 import PinterestPages.HomePage;
 import PinterestPages.WelcomePage;
-import Utils.BrowserClass;
+import Utils.Browser;
 
 import static Utils.Constants.PINTEREST_URL;
 
@@ -16,17 +16,17 @@ public class Steps {
     // Steps for BaseTest
 
     public static void openBrowser() {
-        BrowserClass.webDriverStartWork();
-        BrowserClass.setUrl(PINTEREST_URL);
-        BrowserClass.customizeBrowserWindow();
+        Browser.webDriverStartWork();
+        Browser.setUrl(PINTEREST_URL);
+        Browser.customizeBrowserWindow();
     }
 
     public static void clearCookies() {
-        BrowserClass.clearCookiesAndStorage();
+        Browser.clearCookiesAndStorage();
     }
 
     public static void closeBrowser() {
-        BrowserClass.closeBrowser();
+        Browser.closeBrowser();
     }
 
     // Steps for login test
@@ -41,10 +41,12 @@ public class Steps {
 
     public static void goToPersonalProfile(){
         homePage.waitHomePageIsLoaded();
+        homePage.homePageHeader.waitUntilHeaderProfileWillBeClickable();
         homePage.homePageHeader.clickHeaderProfile();
     }
 
     public static void getCurrentAccountName() {
+        accountPage.waitUntilCurrentAccountNameWillBeVisible();
         accountPage.getAccountName();
     }
 
