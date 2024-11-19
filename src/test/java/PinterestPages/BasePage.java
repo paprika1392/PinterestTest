@@ -1,6 +1,6 @@
 package PinterestPages;
 
-import Utils.BrowserClass;
+import Utils.Browser;
 import org.openqa.selenium.WebDriver;
 
 public class BasePage {
@@ -8,6 +8,6 @@ public class BasePage {
     public WebDriver driver;             //singleton
 
 public BasePage() {
-    driver = BrowserClass.getDriver();   //singleton
+    driver = Browser.getDriver();   //singleton
 }
 }
