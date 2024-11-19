@@ -6,18 +6,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BrowserClass {
+public class Browser {
 
     private static WebDriver driver; //singleton
 
-    private BrowserClass() {         //singleton
-
-    }
+    private Browser() {}             //singleton
 
     public static WebDriver getDriver() {  //singleton
         if(driver == null) {
             WebDriverManager.chromedriver().setup();  // automatic driver download
-            WebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
         }
         return driver;
     }
