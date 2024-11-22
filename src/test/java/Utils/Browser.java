@@ -39,9 +39,7 @@ public class Browser {
     }
 
     public static WebDriverWait getWebdriverWait() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        return wait;
-
+         return new WebDriverWait(driver, 10);
     }
 
     public static void closeBrowser() {
