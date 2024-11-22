@@ -7,7 +7,7 @@ public class BasePage {
 
     public WebDriver driver;             //singleton
 
-public BasePage() {
-    driver = Browser.getDriver();   //singleton
-}
+    public BasePage() {
+        driver = Browser.getDriver();   //singleton
+    }
 }

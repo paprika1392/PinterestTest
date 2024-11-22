@@ -15,6 +15,7 @@ public class WelcomePage extends BasePage {
     public void waitUntilLoginButtonWillBeClickable() {
         Browser.getWebdriverWait().until(ExpectedConditions.elementToBeClickable(loginButton));
     }
+
     public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }

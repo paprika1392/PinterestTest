@@ -14,8 +14,8 @@ public class LoginTest extends BaseTest {
         Steps.enterLoginAndPassword(LOGIN, PASSWORD);
         Steps.goToPersonalProfile();
         Steps.getCurrentAccountName();
-        boolean result = AccountPage.accountName.equals(ACTUAL_ACCOUNT_NAME);
-        Assert.assertTrue(result, String.format("Incorrect current account name"));
+        boolean result = AccountPage.accountName.equals(EXPECTED_ACCOUNT_NAME);
+        Assert.assertTrue(result, "Incorrect current account name");
 
     }
 }
