@@ -10,6 +10,8 @@ public class AccountPage extends BasePage {
 
     private final By currentAccountName = By.xpath("//div[@data-test-id='profile-name']");
 
+    private final By editButton = By.xpath("//button[@aria-label='Edit']");
+
     public  void waitUntilCurrentAccountNameWillBeVisible() {
         Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(currentAccountName));
     }
