@@ -29,7 +29,7 @@ public class Steps {
         Browser.closeBrowser();
     }
 
-    // Steps for login test
+    // Step for login
 
     public static void enterLoginAndPassword(String login, String password) {
         welcomePage.waitUntilLoginButtonWillBeClickable();
@@ -40,6 +40,8 @@ public class Steps {
         welcomePage.clickSubmitRegisterButton();
     }
 
+    // Steps for login test
+
     public static void goToPersonalProfile(){
         homePage.waitHomePageIsLoaded();
         homePage.homePageHeader.waitUntilHeaderProfileWillBeClickable();
@@ -49,6 +51,24 @@ public class Steps {
     public static void getCurrentAccountName() {
         accountPage.waitUntilCurrentAccountNameWillBeVisible();
         accountPage.getAccountName();
+    }
+
+    // Steps for add and delete data grid element from account page
+
+    public static void selectAndSaveFirstDataGridElement() {
+        homePage.firstDataGridElement.selectFirstDataGridItem();
+        homePage.firstDataGridElement.clickSaveButton();
+    }
+
+    public static void goToAccountPage() {
+        homePage.homePageHeader.clickHeaderProfile();
+    }
+
+    public static void selectAndDeleteFirstDataGridElement() {
+        homePage.firstDataGridElement.selectFirstDataGridItem();
+        homePage.firstDataGridElement.clickEditButton();
+        homePage.firstDataGridElement.clickDeleteButton();
+        homePage.firstDataGridElement.clickConfirmDeleteButton();
     }
 
 
