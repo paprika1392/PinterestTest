@@ -3,6 +3,8 @@ package PageElements;
 import PinterestPages.BasePage;
 import Utils.Browser;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FirstDataGridElement extends BasePage {
@@ -14,7 +16,11 @@ public class FirstDataGridElement extends BasePage {
     private final By confirmDeleteButton = By.xpath("//div[@data-test-id='confirm-delete-pin']");
 
     public void selectFirstDataGridItem() {
-        driver.findElement(firstDataGridItem).isSelected();
+        Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(firstDataGridItem));
+        WebElement element = driver.findElement(firstDataGridItem);
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
     }
 
     public void clickSaveButton() {
