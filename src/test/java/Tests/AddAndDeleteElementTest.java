@@ -1,7 +1,6 @@
 package Tests;
 
 import Steps.Steps;
-import Utils.Browser;
 import org.testng.annotations.Test;
 
 import static Utils.Constants.LOGIN;
