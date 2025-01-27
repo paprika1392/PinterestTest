@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FirstDataGridElement extends BasePage {
+    
+    public static Boolean displayOfFirstDataGridItem;
 
     private final By firstDataGridItem = By.xpath("//div[@data-grid-item-idx='0']");
     private final By saveButton = By.xpath("//button[@aria-label='Save']");
@@ -28,10 +30,6 @@ public class FirstDataGridElement extends BasePage {
         driver.findElement(saveButton).click();
     }
 
-    public void clickFirstDataGridElement() {
-        driver.findElement(firstDataGridItem).click();
-    }
-
     public void clickEditButton() {
         Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(editButton));
         driver.findElement(editButton).click();
@@ -45,6 +43,11 @@ public class FirstDataGridElement extends BasePage {
     public void clickConfirmDeleteButton() {
         Browser.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(confirmDeleteButton));
         driver.findElement(confirmDeleteButton).click();
+    }
+
+    public Boolean checkFirstDataGridElementIsDisplayed() {
+        displayOfFirstDataGridItem = driver.findElement(firstDataGridItem).isDisplayed();
+        return displayOfFirstDataGridItem;
     }
 
 }
