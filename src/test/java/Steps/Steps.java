@@ -55,21 +55,25 @@ public class Steps {
 
     // Steps for add and delete data grid element from account page
 
-    public static void selectAndSaveFirstDataGridElement() {
-        homePage.firstDataGridElement.selectFirstDataGridItem();
-        homePage.firstDataGridElement.clickSaveButton();
-    }
-
     public static void goToAccountPage() {
         homePage.homePageHeader.clickHeaderProfile();
     }
 
-    public static void selectAndDeleteFirstDataGridElement() {
+    public static void reloadCurrentPage() {
+        Browser.reloadPage();
+    }
+
+    public static void addFirstDataGridElement() {
+        homePage.firstDataGridElement.selectFirstDataGridItem();
+        homePage.firstDataGridElement.clickSaveButton();
+        homePage.firstDataGridElement.checkFirstDataGridElementIsDisplayed();
+    }
+
+    public static void deleteFirstDataGridElement() {
         homePage.firstDataGridElement.selectFirstDataGridItem();
         homePage.firstDataGridElement.clickEditButton();
         homePage.firstDataGridElement.clickDeleteButton();
         homePage.firstDataGridElement.clickConfirmDeleteButton();
     }
-
 
 }
