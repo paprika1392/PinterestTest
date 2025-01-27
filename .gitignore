@@ -1,1 +1,44 @@
+# Maven target folder (build artifacts)
 target/
+
+# IntelliJ project-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# ChromeDriver, GeckoDriver, etc.
+*.exe
+*.zip
+drivers/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*.old
+
+# Coverage reports (e.g., JaCoCo or others)
+*.exec
+
+# Test output and reports
+surefire-reports/
+test-output/
+
+# Java class files
+*.class
+
+# IDE Configurations (VSCode, JetBrains, etc.)
+.vscode/
+
+# Node modules (if npm is used for frontend in the project)
+node_modules/
