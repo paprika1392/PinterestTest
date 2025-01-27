@@ -46,6 +46,8 @@ public class Browser {
         driver.quit();
     }
 
-
+    public static void reloadPage() {
+        driver.navigate().refresh();
+    }
     }
 
